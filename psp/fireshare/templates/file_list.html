@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Uploaded Files</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Owner</th>
+      <th>Download</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for upload in uploads %}
+    <tr>
+      <td>{{ upload.name }}</td>
+      <td>{{ upload.user.username }}</td>
+      <td><a href="{{ upload.upload.url }}">Download</a></td>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

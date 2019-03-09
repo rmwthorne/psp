@@ -28,13 +28,13 @@ class RegisterView(FormView):
 class FileListView(ListView):
     model = FileUpload
     context_object_name = 'uploads'
+    template_name = 'file_list.html'
 
 
 class UploadFileView(CreateView):
     model = FileUpload
     form_class = FileUploadForm
-    success_url = reverse_lazy('index') # change this
-    #  success_url = reverse_lazy('files_list')
+    success_url = reverse_lazy('files_list')
     template_name = 'upload.html'
 
     def form_valid(self, form):
