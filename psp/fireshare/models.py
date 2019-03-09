@@ -23,3 +23,9 @@ class FileUpload(models.Model):
 
     def __str__ (self):
         return self.name
+
+#
+    #  def save_model(self, request, obj, form, change):
+        #  set the user (owner) of the file on creation
+        #  obj.user = request.user
+        #  super().save_model(request, obj, form, change)

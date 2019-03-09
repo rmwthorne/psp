@@ -6,4 +6,4 @@ from .models import FileUpload
 class FileUploadForm(forms.ModelForm):
     class Meta:
         model = FileUpload
-        fields = ('name', 'upload', 'published')
+        fields = ('name', 'upload', 'published',)

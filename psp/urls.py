@@ -15,6 +15,7 @@ urlpatterns = [
     path('register/', views.RegisterView.as_view(), name='register'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('files/', views.FileListView.as_view(), name='files_list'),
+    path('upload/', views.UploadFileView.as_view(), name='upload'),
 
 ]
 
