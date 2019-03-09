@@ -86,18 +86,23 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
+password_validation_module = 'django.contrib.auth.password_validation'
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': '{}.UserAttributeSimilarityValidator'
+        .format(password_validation_module),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': '{}.MinimumLengthValidator'
+        .format(password_validation_module),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': '{}.CommonPasswordValidator'
+        .format(password_validation_module),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': '{}.NumericPasswordValidator'
+        .format(password_validation_module),
     },
 ]
 
@@ -125,3 +130,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = 'media/'
 
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'login'

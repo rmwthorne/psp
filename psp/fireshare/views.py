@@ -1,9 +1,20 @@
-from django.shortcuts import render
+#  from django.shortcuts import render
+#  from django.contrib.auth.views import LoginView
+from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, FormView, ListView, TemplateView
 
-from .models import FileUpload
 from .forms import FileUploadForm
+from .models import FileUpload
+
+
+class IndexView(TemplateView):
+    template_name = 'home.html'
+
+
+class RegisterView(FormView):
+    form_class = UserCreationForm
+    template_name = 'registration/register.html'
 
 
 class FileListView(ListView):

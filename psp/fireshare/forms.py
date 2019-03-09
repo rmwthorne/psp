@@ -7,4 +7,3 @@ class FileUploadForm(forms.ModelForm):
     class Meta:
         model = FileUpload
         fields = ('name', 'upload', 'published')
-
