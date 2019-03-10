@@ -8,6 +8,7 @@
     <tr>
       <th>Name</th>
       <th>Owner</th>
+      <th>Published</th>
       <th>Download</th>
     </tr>
   </thead>
@@ -16,7 +17,12 @@
     <tr>
       <td>{{ upload.name }}</td>
       <td>{{ upload.user.username }}</td>
-      <td><a href="{{ upload.upload.url }}">Download</a></td>
+      <td>{{ upload.published }}
+      <td>
+        {% if upload.published == 'PU' or upload.user.username == user.username %}
+        <a href="{{ upload.upload.url }}">Download</a>
+        {% endif %}
+      </td>
     {% endfor %}
   </tbody>
 </table>
