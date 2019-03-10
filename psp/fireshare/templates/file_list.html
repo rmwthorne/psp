@@ -9,6 +9,7 @@
       <th>Name</th>
       <th>Owner</th>
       <th>Published</th>
+      <th>Uploaded</th>
       <th>Download</th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
       <td>{{ upload.name }}</td>
       <td>{{ upload.user.username }}</td>
       <td>{{ upload.published }}</td>
+      <td>{{ upload.created }}</td>
       <td><a href="{{ upload.upload.url }}">Download</a></td>
     {% endfor %}
   </tbody>
