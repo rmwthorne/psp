@@ -17,12 +17,8 @@
     <tr>
       <td>{{ upload.name }}</td>
       <td>{{ upload.user.username }}</td>
-      <td>{{ upload.published }}
-      <td>
-        {% if upload.published == 'PU' or upload.user.username == user.username %}
-        <a href="{{ upload.upload.url }}">Download</a>
-        {% endif %}
-      </td>
+      <td>{{ upload.published }}</td>
+      <td><a href="{{ upload.upload.url }}">Download</a></td>
     {% endfor %}
   </tbody>
 </table>

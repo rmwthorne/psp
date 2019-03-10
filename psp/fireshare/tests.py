@@ -1,7 +1,8 @@
+from django.contrib.auth.views import LoginView
+from django.http import HttpRequest
 from django.test import TestCase
-
-from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import resolve
+
 from psp.fireshare import views
 
 

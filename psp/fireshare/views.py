@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
+from django.db.models import Q
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, FormView, ListView, TemplateView
@@ -29,6 +30,12 @@ class FileListView(ListView):
     model = FileUpload
     context_object_name = 'uploads'
     template_name = 'file_list.html'
+
+    def get_queryset(self):
+        return FileUpload.objects.filter(
+            Q(published='PU') |
+            Q(user__username=self.request.user)
+        )
 
 
 class UploadFileView(CreateView):
