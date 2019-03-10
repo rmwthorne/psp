@@ -4,9 +4,13 @@ from django.db.models import Q
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, FormView, ListView, TemplateView
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import viewsets
 
 from .forms import FileUploadForm
 from .models import FileUpload
+from .serializers import FileUploadSerializer
 
 
 class IndexView(TemplateView):
@@ -26,7 +30,7 @@ class RegisterView(FormView):
         return redirect('index')
 
 
-class FileListView(ListView):
+class FileListView(ListView, APIView):
     model = FileUpload
     context_object_name = 'uploads'
     template_name = 'file_list.html'
@@ -36,6 +40,12 @@ class FileListView(ListView):
             Q(published='PU') |
             Q(user__username=self.request.user)
         )
+
+class FileListViewAPI(viewsets.ModelViewSet):
+    serializer_class = FileUploadSerializer
+
+    def get(self, request, *args, **kwargs):
+        return Response()
 
 
 class UploadFileView(CreateView):
