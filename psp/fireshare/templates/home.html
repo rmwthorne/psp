@@ -3,5 +3,23 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-  <h2>Home</h2>
+  <div class="bs-component">
+    <div class="jumbotron">
+      <h1 class="display-3"><i class="fab fa-free-code-camp"></i> Fireshare</h1>
+      <p class="lead">File sharing for hot customers</p>
+      <hr class="my-4">
+      <p>This is a mock django project which allows users to allow users to upload files, which can subsequently be downloaded by the uploading user, and other users if marked as public.</p>
+      <p>You can...</p>
+      <ul>
+        <li>Register and log-in using a username and password</li>
+        <li>Upload files, allowing the user to select whether the file is ‘public’, or ‘private’</li>
+        <li>View a list of the users previously uploaded files, and files uploaded as ‘public’, <br />including upload time/date, and a link to the original upload</li>
+      </ul>
+      <p class="lead mt-4">
+      <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Register Now</a><p class="ml-2 mr-2">or</a>
+      <a class="" href="{% url 'login' %}">Log in</a>
+      </p>
+    </div>
+  <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
+  </div>
 {% endblock %}
