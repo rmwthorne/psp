@@ -3,7 +3,7 @@ bottle==0.12.16
 cached-property==1.4.2
 certifi==2018.4.16
 chardet==3.0.4
-Django==2.2.10
+Django==2.2.13
 djangorestframework==3.9.2
 docker==3.3.0
 docker-pycreds==0.2.3
