@@ -22,7 +22,7 @@ PyYAML==3.13
 requests==2.18.4
 six==1.11.0
 termcolor==1.1.0
-urllib3==1.22
+urllib3==1.26.5
 virtualenv==16.2.0
 web-pdb==1.4.4
 websocket-client==0.47.0
