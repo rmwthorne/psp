@@ -1,5 +1,5 @@
 asyncore-wsgi==0.0.9
-bottle==0.12.16
+bottle==0.12.20
 cached-property==1.4.2
 certifi==2018.4.16
 chardet==3.0.4
